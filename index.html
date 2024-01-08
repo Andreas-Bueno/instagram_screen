@@ -6,37 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instagram</title>
 
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="./src/output.css" rel="stylesheet">
 </head>
 
 <body class="flex h-full w-screen">
 
-    <div class="flex h-full w-full">
-        <div name="head-page" class="flex h-full w-screen justify-between mx-4 my-4">
-            <div class="flex w-full">
-                <img src="./imgs/logo.png" alt="logo_top" class="bg-cover h-10 bg-green-600">
+    <div class="flex w-screen h-16">
+        <div name="head-page" class="flex w-screen my-4">
+            <div class="flex justify-center items-center">
+                <img src="./imgs/logo.png" alt="logo_top" class="flex bg-cover h-18 w-32 h-6 md:h-10 md:w-60 lg-h-12 ml-4">
 
             </div>
-            <div class="flex absolute mx-80 h-10 w-40">
+            <div class="flex h-7 w-full items-center justify-center">
                 <form class="flex gap-2" name="search-bar">
 
                     <button type="submit" class="w-6 h-10 flex gap-2 items-center" name="search-bar">
-                        <img src="./icons/lupa.png" alt="search" class="flex bg-cover">
+                        <img src="./icons/lupa.png" alt="search" class="flex">
                     </button>
                     <input type="text" placeholder="Search.." name="search" class="flex p-2">
                 </form>
             </div>
             <div class="flex ">
-                <h1 class="flex bg-green-600 h-8 w-10 mx-2"></h1>
+                <h1 class="flex bg-green-600 w-7 h-7 md:h-10 md:w-10 mx-2"></h1>
             </div>
             <div class="flex ">
-                <h1 class="flex bg-green-600 h-8 w-10 mx-2"></h1>
+                <h1 class="flex bg-green-600 w-7 h-7  md:h-10 md:w-10 mx-2"></h1>
             </div>
             <div class="flex ">
 
                 <button type="button">
                     <div
-                        class="flex font-bold text-slate-50 items-center justify-center p-4 bg-green-600 h-10 w-40 mx-2 rounded-lg bg-gradient-to-r from-red-400 from-50% via-orange-400 via-51% to-orange-300 to-90% ">
+                        class="flex font-bold text-slate-50 items-center justify-center p-4 bg-green-600 text-xs md:text-lg md:p-6 h-10 w-20  md:h-10 md:w-32 lg:h-10 md:p-2 lg:w-40 mx-2 rounded-lg bg-gradient-to-r from-red-400 from-50% via-orange-400 via-51% to-orange-300 to-90%">
                         + Add Photo
                     </div>
                 </button>
@@ -49,66 +49,66 @@
     </div>
 
 
-    <div class="flex fixed items-center mt-16 h-16 w-full mx-80">
-        <h1 class="flex text-4xl">Stories</h1>
-        <div class="flex h-10 mt-1 ml-80 w-6/12 justify-end">
-            <button class="flex justify-end">
-                <button class="w-4 mr-1">
-                    <img src="./icons/play-button.png" alt="">
+    <div class="flex fixed items-center mt-16 h-18 w-full mx-80">
+        <h1 class="flex text-3xl md:text-">Stories</h1>
+        <div class="flex h-10 w-screen mt-4 ml-80">
+            <button class="flex">
+                <button class="h-10 w-20">
+                    <img src="./icons/play-button.png" alt="" class="h-6 bg-cyan-600">
                 </button>
-                <button class="flex items-center ">Watch all</button>
+                <button class="flex items-center bg-cyan-200">Watch all</button>
             </button>
         </div>
 
         <div class="flex fixed mt-40 h-20 w-full gap-4">
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
+                    class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
             </button>
             <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
-            <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
-            <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
-            <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
-            <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
-            <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
-            <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                    class="bg-cover gap-4 rounded-full h-14 w-14 object-cover border-2 border-fuchsia-400 p-1">
-            </button>
+                class="bg-cover gap-4 rounded-full hidden md:flex  h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
+        </button>
+        <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+            class="bg-cover gap-4 rounded-full hidden md:flex    h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
+    </button>
+    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+        class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
+</button>
+<button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+    class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
+</button>
+<button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+    class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
+</button>
+<button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+    class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1">
+</button>
+
+
+
         </div>
     </div>
     <div class="grid fixed grid-cols-3 h-full my-60 mx-80 w-9/12 bg-green-600 gap-4">
@@ -118,20 +118,14 @@
             <img src="" alt="">
         </h1>
         <h1 class="grid h-full w-full bg-green-300">
-            <img src="./imgs/dua_lipa.png" alt="" class="bg-cover h-full">
+            <img src="./imgs/dua_lipa.png" alt="" class="bg-auto hover:bg-contain h-full w-80">
         </h1>
-        <h1 class="grid h-full w-full bg-green-300">
-            <img src="./imgs/dua_lipa.png" alt="" class="bg-cover h-full">
-
-            <img src="" alt="">
-        </h1>
-        <h1 class="grid h-full w-full bg-green-300">
+        <h1 class="grid h-full w-full bg-green-600 bg-cover">
             <img src="./imgs/dua_lipa.png" alt="" class="bg-cover h-full">
 
             <img src="" alt="">
         </h1>
-        <h1 class="grid h-full w-full bg-green-300">aaa</h1>
-        <h1 class="grid h-full w-full bg-green-300">aaa</h1>
+
     </div>
 
     <button type="button" onclick="location.href='https://google.com';s" alt="perfil_photo_left"
