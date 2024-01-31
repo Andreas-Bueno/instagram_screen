@@ -7,17 +7,19 @@
     <title>Instagram</title>
 
     <link href="./src/output.css" rel="stylesheet">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script src="https://kit.fontawesome.com/782892482a.js" crossorigin="anonymous"></script>
 </head>
 
-<body class=".">
+<body class="">
 
-    <div name="primary-container" class="flex h-full w-full">
-        <div name="left-col-container" class="h-full w-4/12">
+    <div name="primary-container" class=" flex h-full w-full">
+        <div name="left-col-container" class="h-screen min-w-5/12">
             <!-- Logo -->
             <div class="w-full h-16 p-3">
                 <img src="./imgs/logo.png" alt="logo_top" class="bg-cover h-10">
             </div>
+
             <!-- Foto Perfil -->
             <div class="w-full h-20 flex items-center justify-center ml-4">
                 <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
@@ -26,24 +28,52 @@
             </div>
             <!-- Nome e @ -->
             <div class="flex min-w min-h h-7 md:justify-center">
-                <div class="flex h-7 w-36  font-bold">Cristiano Ronaldo</div>
+                <div class="flex h-7 w-36  font-bold">Beauty Images</div>
             </div>
             <div class="flex w-full font-semi-bold">
-                <div class="flex items-center ml-28" >@Cristiano</div></div>
-            <!-- Post Followers Following -->
-            <div class="grid grid-cols-3 w-full h-10 mt-6">
-                <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">54</div>
-                <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">000</div>
-                <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">000</div>
-                <div class="h-7 w-full p-2 ml-4 flex items-center">Posts</div>
-                <div class="h-7 w-full p-2 ml-4 flex items-center">Followers</div>
-                <div class="h-7 w-full p-2 ml-4 flex items-center">Following</div>
+                <div class="flex items-center mx-12">@bimages</div>
             </div>
-            <!-- MENU SIDE  -->
-            <div class="w-full h-screen mt-10 bg-blue-200">aaa</div>
+            <!-- Post Followers Following -->
+            <div class="drop-shadow-lg rounded-md">
+                <div class="grid grid-cols-3 w-full h-10 mt-6">
+                    <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">54</div>
+                    <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">000</div>
+                    <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">000</div>
+                    <div class="h-7 w-full p-2 ml-4 flex items-center">Posts</div>
+                    <div class="h-7 w-full p-2 ml-4 flex items-center">Followers</div>
+                    <div class="h-7 w-full p-2 ml-4 flex items-center">Following</div>
+                </div>
+                <!-- MENU SIDE  -->
+                <div class=" h-full w-10 mx-6 mt-10  sm:relative transition-all duration-300" x-data="{open:false}">
+                    <button name="toggle" @click="open=true "
+                        class="absolute left-0 h-12 w-48 top-22 bg-slate-50	 rounded-full shadow-lg hover:bg-slate-100 hover:h-14">
+                        <i class="fa-solid fa-gear h-4 w-4"></i>
+                    </button>
+                    <div class="grid grid-cols-2" @click.away="open=false" x-show="open">
+
+                        <button><i class="fa-solid fa-list "></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Feed</button>
+                        <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Explore</button>
+                        <button><i class="fa-solid fa-bell"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Notification</button>
+                        <button><i class="fa-solid fa-envelope"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Message</button>
+                        <button><i class="fa-solid fa-location-arrow"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Direct</button>
+                        <button> <i class="fa-solid fa-chart-simple"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Stats</button>
+                        <button><i class="fa-solid fa-gear"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Setting</button>
+                        <button><i class="fa-solid fa-right-from-bracket"></i></button>
+                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Logout</button>
+                    </div>
+
+                </div>
+            </div>
         </div>
         <!-- /\ Sidebar \/ Feed & Stories -->
-        <div name="right-col-container" class="block h-full w-screen mx-8">
+        <div name="right-col-container" class="block h-screen w-screen mx-8">
             <!-- First ROW -->
             <div class="h-14 mt-4">
 
@@ -71,224 +101,147 @@
                         </button>
                     </div>
                 </div>
-                <!-- 2 ROW -->
-                <div class="flex h-28 items-center justify-between ">
-                    <div class="flex h-20 w-32 text-4xl font-bold p-4">Stories</div>
-
-                    <div class="flex p-2 items-center">
-                        <img src="./icons/play-button.png" alt="" class="h-6 w-6">
-                        <button class="h-10 w-20">
-                            Watch All </button>
-                    </div>
-
-                </div>
-                <!-- 3 ROW -->
-                <div class="flex h-16 md:h-20 mx-3">
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex  h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex    h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-                    <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                            class="bg-cover gap-4 rounded-full hidden md:flex h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                    </button>
-
-
-                </div>
-                <!-- 4 ROW -->
-                <div class="flex h-14 mt-1 items-center justify-between ">
-                    <div class="flex h-20 w-32 text-4xl font-bold items-center p-4">Feed</div>
-
-                    <div class="flex items-center justify-center">
-                        <button class="flex h-10 w-14 font-bold">
-                            Latest</button>
-                        <button class="flex h-10 w-20 font-semi-bold">
-                            Popular</button>
-                    </div>
-
-                </div>
-                <!-- 5 ROW -->
-                <div class="grid  grid-cols-3 w-full h-full gap-4 md:gap-3">
-
-                    <div class="h-screen max-w-80 bg-auto">
-                        <img src="./imgs/Sports_Cristiano Ronaldo (1080x1920) Wallpaper ID_ 733857 - Mobile Abyss.jpeg"
-                            alt="" class="">
-                        <div class=" p-1 md:gap-4">
-                            <div class="flex">
-                                <button alt="perfil_fallback" class="flex mt-1">
-                                    <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                        class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
-                                </button>
-                                <h1
-                                    class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
-                                    Cristiano Ronaldo
-                                </h1>
-                                <button class="flex ml-10 items-center mb-3"> <i
-                                        class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
-                                </button>
-                                <button class="flex mb-3 ml-1 items-center"><i
-                                        class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="h-screen max-w-80 bg-auto">
-                        <img src="./imgs/Sports_Cristiano Ronaldo (1080x1920) Wallpaper ID_ 733857 - Mobile Abyss.jpeg"
-                            alt="" class="">
-                        <div class=" p-1 md:gap-4">
-                            <div class="flex">
-                                <button alt="perfil_fallback" class="flex mt-1">
-                                    <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                        class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
-                                </button>
-                                <h1
-                                    class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
-                                    Cristiano Ronaldo
-                                </h1>
-                                <button class="flex ml-10 items-center mb-3"> <i
-                                        class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
-                                </button>
-                                <button class="flex mb-3 ml-1 items-center"><i
-                                        class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-screen max-w-80 bg-auto">
-                        <img src="./imgs/Sports_Cristiano Ronaldo (1080x1920) Wallpaper ID_ 733857 - Mobile Abyss.jpeg"
-                            alt="" class="">
-                        <div class=" p-1 md:gap-4">
-                            <div class="flex">
-                                <button alt="perfil_fallback" class="flex mt-1">
-                                    <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                        class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
-                                </button>
-                                <h1
-                                    class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
-                                    Cristiano Ronaldo
-                                </h1>
-                                <button class="flex ml-10 items-center mb-3"> <i
-                                        class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
-                                </button>
-                                <button class="flex mb-3 ml-1 items-center"><i
-                                        class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-screen max-w-80 bg-auto">
-                        <img src="./imgs/Sports_Cristiano Ronaldo (1080x1920) Wallpaper ID_ 733857 - Mobile Abyss.jpeg"
-                            alt="" class="">
-                        <div class=" p-1 md:gap-4">
-                            <div class="flex">
-                                <button alt="perfil_fallback" class="flex mt-1">
-                                    <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                        class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
-                                </button>
-                                <h1
-                                    class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
-                                    Cristiano Ronaldo
-                                </h1>
-                                <button class="flex ml-10 items-center mb-3"> <i
-                                        class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
-                                </button>
-                                <button class="flex mb-3 ml-1 items-center"><i
-                                        class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-screen max-w-80 bg-auto">
-                        <img src="./imgs/Sports_Cristiano Ronaldo (1080x1920) Wallpaper ID_ 733857 - Mobile Abyss.jpeg"
-                            alt="" class="">
-                        <div class=" p-1 md:gap-4">
-                            <div class="flex">
-                                <button alt="perfil_fallback" class="flex mt-1">
-                                    <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                        class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
-                                </button>
-                                <h1
-                                    class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
-                                    Cristiano Ronaldo
-                                </h1>
-                                <button class="flex ml-10 items-center mb-3"> <i
-                                        class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
-                                </button>
-                                <button class="flex mb-3 ml-1 items-center"><i
-                                        class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="h-screen max-w-80 bg-auto">
-                        <img src="./imgs/Sports_Cristiano Ronaldo (1080x1920) Wallpaper ID_ 733857 - Mobile Abyss.jpeg"
-                            alt="" class="">
-                        <div class=" p-1 md:gap-4">
-                            <div class="flex">
-                                <button alt="perfil_fallback" class="flex mt-1">
-                                    <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                        class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
-                                </button>
-                                <h1
-                                    class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
-                                    Cristiano Ronaldo
-                                </h1>
-                                <button class="flex ml-10 items-center mb-3"> <i
-                                        class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
-                                </button>
-                                <button class="flex mb-3 ml-1 items-center"><i
-                                        class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
-                            </div>
-                        </div>
-                    </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-                </div>
             </div>
+            <!-- 2 ROW -->
+            <div class="flex h-28 items-center justify-between ">
+                <div class="flex h-20 w-32 text-4xl font-bold p-4">Stories</div>
+
+                <div class="flex p-2 items-center">
+                    <img src="./icons/play-button.png" alt="" class="h-6 w-6">
+                    <button class="h-10 w-20">
+                        Watch All </button>
+                </div>
+
+            </div>
+            <!-- 3 ROW -->
+            <div
+                class="flex h-16 md:h-20 mx-3 w-full snap-x snap-mandatory overflow-scroll scrollbar scrollbar-w-20 scrollbar-h-20">
+                <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button>
+                <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
+                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+                </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+            <!-- 4 ROW -->
+            <div class="flex h-14 mt-1 items-center justify-between ">
+                <div class="flex h-20 w-32 text-4xl font-bold items-center p-4">Feed</div>
+
+                <div class="flex items-center justify-center">
+                    <button class="flex h-10 w-14 font-bold">
+                        Latest</button>
+                    <button class="flex h-10 w-20 font-semi-bold">
+                        Popular</button>
+                </div>
+
+            </div>
+            <!-- 5 ROW -->
+            <div class="grid grid-cols-3 snap-y snap-mandatory overflow-scroll w-full h-screen gap-4 md:gap-3">
+
+                <div class="h-screen max-w-80 bg-auto bg">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="rounded-md h-64 mx-2 w-full">
+                    <div class=" p-1 md:gap-4">
+                        <div class="flex">
+                            <button alt="perfil_fallback" class="flex mt-1">
+                                <img src="./imgs/perfil-sem-foto-fake.jpg"
+                                    class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
+                            </button>
+                            <h1 class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
+                                Beauty Images
+                            </h1>
+                            <button class="flex ml-10 items-center mb-3"> <i
+                                    class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
+                            </button>
+                            <button class="flex mb-3 ml-1 items-center"><i
+                                    class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            </div>
+
         </div>
     </div>
 </body>
