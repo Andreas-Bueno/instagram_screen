@@ -13,89 +13,104 @@
 
 <body class="">
 
-    <div name="primary-container" class=" flex h-full w-full">
-        <div name="left-col-container" class="h-screen min-w-5/12">
+    <div name="primary-container" class="flex h-full w-full">
+        <div name="left-col-container" class="min-w-5/12 h-screen">
             <!-- Logo -->
-            <div class="w-full h-16 p-3">
-                <img src="./imgs/logo.png" alt="logo_top" class="bg-cover h-10">
+            <div class="h-16 w-full p-3">
+                <img src="./imgs/logo.png" alt="logo_top" class="h-10 bg-cover">
             </div>
 
             <!-- Foto Perfil -->
-            <div class="w-full h-20 flex items-center justify-center ml-4">
-                <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="mr-14 bg-cover gap-4 rounded-full h-12 w-12 md:h-16 md:w-16 object-cover border-2 border-fuchsia-400 p-1 mx-1 justify-center">
+            <div class="ml-4 flex h-20 w-full items-center justify-center">
+                <button alt="perfil_fallback" class=""> <img src="./imgs/b_letter.jpeg"
+                        class="mx-1 mr-14 h-12 w-12 justify-center gap-4 rounded-full border-2 border-fuchsia-400 bg-cover object-cover p-1 md:h-16 md:w-16">
                 </button>
             </div>
             <!-- Nome e @ -->
-            <div class="flex min-w min-h h-7 md:justify-center">
-                <div class="flex h-7 w-36  font-bold">Beauty Images</div>
+            <div class="min-w min-h flex h-7 md:justify-center">
+                <div class="flex h-7 w-36 font-bold">Beauty Images</div>
             </div>
-            <div class="flex w-full font-semi-bold">
-                <div class="flex items-center mx-12">@bimages</div>
+            <div class="font-semi-bold flex w-full">
+                <div class="mx-12 flex items-center">@bimages</div>
             </div>
             <!-- Post Followers Following -->
-            <div class="drop-shadow-lg rounded-md">
-                <div class="grid grid-cols-3 w-full h-10 mt-6">
-                    <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">54</div>
-                    <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">000</div>
-                    <div class="h-7 w-full p-2 ml-4 flex items-center ml-7 font-bold">000</div>
-                    <div class="h-7 w-full p-2 ml-4 flex items-center">Posts</div>
-                    <div class="h-7 w-full p-2 ml-4 flex items-center">Followers</div>
-                    <div class="h-7 w-full p-2 ml-4 flex items-center">Following</div>
+            <div class="rounded-md drop-shadow-lg">
+                <div class="mt-6 grid h-10 w-full grid-cols-3">
+                    <div class="ml-4 ml-7 flex h-7 w-full items-center p-2 font-bold">54</div>
+                    <div class="ml-4 ml-7 flex h-7 w-full items-center p-2 font-bold">000</div>
+                    <div class="ml-4 ml-7 flex h-7 w-full items-center p-2 font-bold">000</div>
+                    <div class="ml-4 flex h-7 w-full items-center p-2">Posts</div>
+                    <div class="ml-4 flex h-7 w-full items-center p-2">Followers</div>
+                    <div class="ml-4 flex h-7 w-full items-center p-2">Following</div>
                 </div>
                 <!-- MENU SIDE  -->
-                <div class=" h-full w-10 mx-6 mt-10  sm:relative transition-all duration-300" x-data="{open:false}">
-                    <button name="toggle" @click="open=true "
-                        class="absolute left-0 h-12 w-48 top-22 bg-slate-50	 rounded-full shadow-lg hover:bg-slate-100 hover:h-14">
-                        <i class="fa-solid fa-gear h-4 w-4"></i>
-                    </button>
-                    <div class="grid grid-cols-2" @click.away="open=false" x-show="open">
+                <div x-data="{
 
-                        <button><i class="fa-solid fa-list "></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Feed</button>
+                    openMenu:false,
+                    textoBotao:'Open Options...',
+                    mudarTexto(){
+                        this.openMenu = !this.openMenu;
+
+                        if(this.openMenu){
+                            this.textoBotao='Hidden Options...';
+                        }else{
+                            this.textoBotao='Open Options...';
+                        }
+                    }
+                } " class="relative mx-6 mt-10 h-full w-10 transition-all duration-300">
+                    <button name="more_opitions" @click="mudarTexto" x-text=textoBotao;
+                        class="h-12 w-40 rounded-full bg-slate-100 font-bold shadow-lg hover:bg-slate-100 hover:text-xs">
+
+                    </button>
+                    <div class="grid grid-cols-2" x-show="openMenu"
+                        x-transition:enter="transition duration-1000 transform"
+                        x-transition:leave.end="opacity-0 scale-90" ">
+
+                        <button><i class="fa-solid fa-list"></i></button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Feed</button>
                         <button><i class="fa-solid fa-magnifying-glass"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Explore</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Explore</button>
                         <button><i class="fa-solid fa-bell"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Notification</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Notification</button>
                         <button><i class="fa-solid fa-envelope"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Message</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Message</button>
                         <button><i class="fa-solid fa-location-arrow"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Direct</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Direct</button>
                         <button> <i class="fa-solid fa-chart-simple"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Stats</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Stats</button>
                         <button><i class="fa-solid fa-gear"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Setting</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Setting</button>
                         <button><i class="fa-solid fa-right-from-bracket"></i></button>
-                        <button class="my-3 font-semi-bold p-1 hover:font-bold hover:text-lg">Logout</button>
+                        <button class="font-semi-bold my-3 p-1 hover:text-lg hover:font-bold">Logout</button>
                     </div>
 
                 </div>
             </div>
         </div>
         <!-- /\ Sidebar \/ Feed & Stories -->
-        <div name="right-col-container" class="block h-screen w-screen mx-8">
+        <div name="right-col-container" class="mx-8 block h-screen w-screen">
             <!-- First ROW -->
-            <div class="h-14 mt-4">
+            <div class="mt-4 h-14">
 
                 <div class="flex h-10 w-full justify-between">
-                    <form class="flex gap-2 ml-20" name="search-bar">
-                        <button type="submit" class="flex h-8 w-7 gap-2 items-center" name="search-bar">
+                    <form class="ml-20 flex gap-2" name="search-bar">
+                        <button type="submit" class="flex h-8 w-7 items-center gap-2" name="search-bar">
                             <img src="./icons/lupa.png" alt="search" class="flex bg-cover">
                         </button>
-                        <input type="text" placeholder="Search..." name="search" class="flex p-2 rounded-lg">
+                        <input type="text" placeholder="Search..." name="search" class="flex rounded-lg p-2">
                     </form>
 
 
                     <div class="flex">
-                        <button class="flex h-10 w-10 md:h-10 md:w-10 items-center justify-center">
-                            <i class="flex fa-solid fa-bell "></i>
+                        <button class="flex h-10 w-10 items-center justify-center md:h-10 md:w-10">
+                            <i class="fa-solid fa-bell flex"></i>
                         </button>
-                        <button class="flex h-10 w-10 md:h-10 md:w-10 items-center justify-center">
+                        <button class="flex h-10 w-10 items-center justify-center md:h-10 md:w-10">
                             <i class="fa-solid fa-envelope"></i>
                         </button>
                         <button type="button">
                             <div
-                                class="flex font-bold text-slate-50 items-center justify-end p-4 h-10 w-36 mx-2 rounded-lg bg-gradient-to-r from-red-400 from-50% via-orange-400 via-51% to-orange-300 to-90% ">
+                                class="via-51% mx-2 flex h-10 w-36 items-center justify-end rounded-lg bg-gradient-to-r from-red-400 from-50% via-orange-400 to-orange-300 to-90% p-4 font-bold text-slate-50">
                                 + Add Photo
                             </div>
                         </button>
@@ -103,115 +118,57 @@
                 </div>
             </div>
             <!-- 2 ROW -->
-            <div class="flex h-28 items-center justify-between ">
-                <div class="flex h-20 w-32 text-4xl font-bold p-4">Stories</div>
+            <div class="flex h-28 items-center justify-between">
+                <div class="flex h-20 w-32 p-4 text-4xl font-bold">Stories</div>
 
-                <div class="flex p-2 items-center">
+                <div class="flex items-center p-2">
                     <img src="./icons/play-button.png" alt="" class="h-6 w-6">
                     <button class="h-10 w-20">
                         Watch All </button>
                 </div>
 
             </div>
-            <!-- 3 ROW -->
+            <!-- 3 ROW Stories-->
             <div
-                class="flex h-16 md:h-20 mx-3 w-full snap-x snap-mandatory overflow-scroll scrollbar scrollbar-w-20 scrollbar-h-20">
-                <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
+            class="max-w-screen mx-3 h-10 w-full flex-nowrap md:h-20">
+                <div class="h-18 w-auto items-center">
+                    <button alt="perfil_fallback" class="h-auto w-20 rounded-full bg-auto p-1"> <img src="https://source.unsplash.com/random/300x350"
+                        class="mx-1 h-14 w-14 snap-center rounded-full border-2 border-fuchsia-400 p-1">
                 </button>
-                <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button> <button alt="perfil_fallback" class=""> <img src="./imgs/perfil-sem-foto-fake.jpg"
-                        class="snap-center bg-cover gap-4 rounded-full h-14 w-14  object-cover border-2 border-fuchsia-400 p-1 mx-1">
-                </button>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                </div>
 
             </div>
             <!-- 4 ROW -->
-            <div class="flex h-14 mt-1 items-center justify-between ">
-                <div class="flex h-20 w-32 text-4xl font-bold items-center p-4">Feed</div>
+            <div class="mt-1 flex h-14 items-center justify-between">
+                <div class="flex h-20 w-32 items-center p-4 text-4xl font-bold">Feed</div>
 
                 <div class="flex items-center justify-center">
                     <button class="flex h-10 w-14 font-bold">
                         Latest</button>
-                    <button class="flex h-10 w-20 font-semi-bold">
+                    <button class="font-semi-bold flex h-10 w-20">
                         Popular</button>
                 </div>
 
             </div>
             <!-- 5 ROW -->
-            <div class="grid grid-cols-3 snap-y snap-mandatory overflow-scroll w-full h-screen gap-4 md:gap-3">
+            <div class="grid h-screen w-full snap-y snap-mandatory grid-cols-3 gap-4 overflow-scroll md:gap-3">
 
-                <div class="h-screen max-w-80 bg-auto bg">
-                    <img src="https://source.unsplash.com/random/350x350" alt="" class="rounded-md h-64 mx-2 w-full">
-                    <div class=" p-1 md:gap-4">
+                <div class="bg h-screen max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="mx-2 h-64 w-full rounded-md">
+                    <div class="p-1 md:gap-4">
                         <div class="flex">
-                            <button alt="perfil_fallback" class="flex mt-1">
+                            <button alt="perfil_fallback" class="mt-1 flex">
                                 <img src="./imgs/perfil-sem-foto-fake.jpg"
-                                    class=" bg-cover gap-4 rounded-full sm:flex md:flex md:h-7 md:w-7 mr-2 object-cover border-2 border-fuchsia-400 p-1">
+                                    class="mr-2 gap-4 rounded-full border-2 border-fuchsia-400 bg-cover object-cover p-1 sm:flex md:flex md:h-7 md:w-7">
                             </button>
-                            <h1 class="flex font-semi-bold text-xs md:text-sm mb-3 mr-3 whitespace-nowrap items-center">
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
                                 Beauty Images
                             </h1>
-                            <button class="flex ml-10 items-center mb-3"> <i
-                                    class=" fa-regular fa-heart mr-1 h-3  text-xs"></i>84.4K
+                            <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
                             </button>
-                            <button class="flex mb-3 ml-1 items-center"><i
-                                    class=" fa-regular fa-comment mx-1 ml-2 text-xs "></i>68</button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
                         </div>
                     </div>
                 </div>
