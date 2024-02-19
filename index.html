@@ -13,8 +13,8 @@
 
 <body class="">
 
-    <div name="primary-container" class="flex h-full w-screen">
-        <div name="left-col-container" class="min-w-5/12 h-screen w-screen">
+    <div name="primary-container" class="flex w-full p-1">
+        <div name="left-col-container" class="min-w-5/12 snap-y-none h-screen w-auto">
             <!-- Logo -->
             <div class="h-16 w-full p-3">
                 <img src="./imgs/logo.png" alt="logo_top" class="h-10 bg-cover">
@@ -88,11 +88,11 @@
             </div>
         </div>
         <!-- /\ Sidebar \/ Feed & Stories -->
-        <div name="right-col-container" class="h-screen w-screen">
+        <div name="right-col-container" class="snap-y-none h-screen-10/12 relative w-10/12">
             <!-- First ROW -->
-            <div class="mt-2 flex h-14 items-center px-4 md:w-9/12 md:justify-end">
+            <div class="relative mt-2 h-14 w-full items-center px-4 md:justify-end">
 
-                <div class="relative flex h-10">
+                <div class="relative flex h-10 w-full">
                     <form class="relative flex gap-2" name="search-bar">
                         <button type="submit" class="flex h-8 w-7 items-center gap-2 p-1" name="search-bar">
                             <img src="./icons/lupa.png" alt="search" class="flex bg-cover">
@@ -101,7 +101,7 @@
                     </form>
 
 
-                    <div class="relative flex lg:ml-80">
+                    <div class="relative flex w-screen items-end lg:justify-end">
                         <button class="flex h-10 w-10 items-center justify-center md:h-10 md:w-10">
                             <i class="fa-solid fa-bell flex"></i>
                         </button>
@@ -121,7 +121,7 @@
                 </div>
             </div>
             <!-- 2 ROW -->
-            <div class="reltive mx-1 flex h-28 w-9/12 items-center justify-between gap-8">
+            <div class="reltive mx-1 flex h-28 w-full items-center justify-between gap-8 px-7">
 
                 <div class="flex h-20 w-32 p-3 text-4xl font-bold sm:text-xl md:text-3xl">Stories</div>
 
@@ -134,7 +134,7 @@
 
             </div>
             <!-- 3 ROW Stories-->
-            <div id="stories" x-data="{storiesLength: 12}" class="mx-3 h-10 w-9/12 flex-nowrap md:h-20">
+            <div id="stories" class="mx-3 h-10 w-11/12 flex-nowrap md:h-20">
                 <div class="h-18 inline-flex w-full items-center overflow-x-scroll">
 
                     <button alt="perfil_fallback" class="min-h-16 min-w-16 rounded-full bg-auto p-1"> <img
@@ -270,7 +270,7 @@
                 </div>
             </div>
             <!-- 4 ROW -->
-            <div class="flex h-14 w-9/12 items-center justify-between">
+            <div class="flex h-14 w-full items-center justify-between">
                 <div class="mt-6 flex h-20 w-32 items-center p-4 font-bold sm:text-xl md:mt-0 md:text-3xl">Feed</div>
 
                 <div class="flex items-center justify-center">
@@ -282,7 +282,7 @@
 
             </div>
             <!-- 5 ROW -->
-            <div class="my-10 grid h-3/6 w-10/12 snap-y snap-mandatory auto-rows-max grid-cols-3 gap-2 overflow-scroll md:gap-3">
+            <div class="my-3 grid h-96 w-full snap-y snap-mandatory auto-rows-max grid-cols-3 overflow-scroll md:gap-3">
 
                 <div class="grid min-h-min min-w-min max-w-80 bg-auto">
                     <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
@@ -353,6 +353,143 @@
                     </div>
                 </div>
 
+                <div class="grid min-h-min min-w-min max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
+                    <div class="flex w-full items-center p-1">
+                        <div class="flex p-1">
+                            <button alt="perfil_fallback" class="mt-1">
+                                <img src="./imgs/b_letter.jpeg"
+                                    class="mr-2 h-7 w-7 rounded-full border-2 border-fuchsia-400 bg-cover object-cover sm:flex md:flex">
+                            </button>
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
+                                Beauty Images
+                            </h1>
+                            <div class="ml-4 flex items-center justify-center">
+                                <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
+                            </button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid min-h-min min-w-min max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
+                    <div class="flex w-full items-center p-1">
+                        <div class="flex p-1">
+                            <button alt="perfil_fallback" class="mt-1">
+                                <img src="./imgs/b_letter.jpeg"
+                                    class="mr-2 h-7 w-7 rounded-full border-2 border-fuchsia-400 bg-cover object-cover sm:flex md:flex">
+                            </button>
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
+                                Beauty Images
+                            </h1>
+                            <div class="ml-4 flex items-center justify-center">
+                                <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
+                            </button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid min-h-min min-w-min max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
+                    <div class="flex w-full items-center p-1">
+                        <div class="flex p-1">
+                            <button alt="perfil_fallback" class="mt-1">
+                                <img src="./imgs/b_letter.jpeg"
+                                    class="mr-2 h-7 w-7 rounded-full border-2 border-fuchsia-400 bg-cover object-cover sm:flex md:flex">
+                            </button>
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
+                                Beauty Images
+                            </h1>
+                            <div class="ml-4 flex items-center justify-center">
+                                <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
+                            </button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid min-h-min min-w-min max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
+                    <div class="flex w-full items-center p-1">
+                        <div class="flex p-1">
+                            <button alt="perfil_fallback" class="mt-1">
+                                <img src="./imgs/b_letter.jpeg"
+                                    class="mr-2 h-7 w-7 rounded-full border-2 border-fuchsia-400 bg-cover object-cover sm:flex md:flex">
+                            </button>
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
+                                Beauty Images
+                            </h1>
+                            <div class="ml-4 flex items-center justify-center">
+                                <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
+                            </button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid min-h-min min-w-min max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
+                    <div class="flex w-full items-center p-1">
+                        <div class="flex p-1">
+                            <button alt="perfil_fallback" class="mt-1">
+                                <img src="./imgs/b_letter.jpeg"
+                                    class="mr-2 h-7 w-7 rounded-full border-2 border-fuchsia-400 bg-cover object-cover sm:flex md:flex">
+                            </button>
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
+                                Beauty Images
+                            </h1>
+                            <div class="ml-4 flex items-center justify-center">
+                                <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
+                            </button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid min-h-min min-w-min max-w-80 bg-auto">
+                    <img src="https://source.unsplash.com/random/350x350" alt="" class="h-64 w-full rounded-md">
+                    <div class="flex w-full items-center p-1">
+                        <div class="flex p-1">
+                            <button alt="perfil_fallback" class="mt-1">
+                                <img src="./imgs/b_letter.jpeg"
+                                    class="mr-2 h-7 w-7 rounded-full border-2 border-fuchsia-400 bg-cover object-cover sm:flex md:flex">
+                            </button>
+                            <h1 class="font-semi-bold mb-3 mr-3 flex items-center whitespace-nowrap text-xs md:text-sm">
+                                Beauty Images
+                            </h1>
+                            <div class="ml-4 flex items-center justify-center">
+                                <button class="mb-3 ml-10 flex items-center"> <i
+                                    class="fa-regular fa-heart mr-1 h-3 text-xs"></i>84.4K
+                            </button>
+                            <button class="mb-3 ml-1 flex items-center"><i
+                                    class="fa-regular fa-comment mx-1 ml-2 text-xs"></i>68</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
 
 
 
